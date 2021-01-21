@@ -67,6 +67,29 @@ class Store {
 
     // 递归的安装模块 比如action mutation getters
     // 对该vue实例state 进行安装
+    // 把上面的变为
+    // 数据拍平
+    // this.getters = {
+    //   a: (stateA) => {},
+    //   b: (stateB) => {},
+    //   c: (stateC) => {},
+    // };
+    // 数据拍平
+    // this.mutations = {
+    //   a: [(stateA) => {}, (stateAa) => {}],
+    //   b: [(stateB) => {}, (stateBa) => {}],
+    //   c: [(stateC) => {}, (stateCc) => {}],
+    // };
+    // 形成属性结构 注意这里必须使用$set方式 否则无法响应数据
+    // state = {
+    //   a: {
+    //     age: '123',
+    //     b: {
+    //       age: '345'
+    //     }
+    //   }
+    // }
+
     installModule(this, this.state, [], this.modules.root)
   }
   // 处理state
